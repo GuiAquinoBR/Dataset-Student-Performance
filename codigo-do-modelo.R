@@ -15,7 +15,6 @@ library(dplyr)
 # Verificando a correlação entre as colunas numéricas
 library(corrplot)
 col_numericas <- sapply(df, is.numeric) # extraindo as colunas numéricas
-length(col_numericas)
 
 ?cor
 cor(df[,col_numericas]) # correlação
@@ -25,13 +24,13 @@ corrplot(cor(df[, col_numericas]), method = 'color') # plotando a correlação
 # Após a verificação, foi observado que não há nenhuma forte correlação entre as 
 # variáveis numéricas.
 # Chama atenção uma leve correlação positiva entre as variáveis:
-#         - Dalc x Walc
-#         - goout x Walc
-#         - Medu x Fedu
+#   - Dalc x Walc
+#   - goout x Walc
+#   - Medu x Fedu
 # Chama atenção uma leve correlação negativa entre as variáveis:
-#         - failures x G1, G2 e G3
-#         - failures x Medu e Fedu
-#         - studytime x Walc
+#   - failures x G1, G2 e G3
+#   - failures x Medu e Fedu
+#   - studytime x Walc
 
 # Analisando as variáveis:
 library(ggplot2)
@@ -78,7 +77,6 @@ plot3 <- ggplot(df, aes(G3)) +
   theme_minimal()
 
 grid.arrange(plot1, plot2, plot3, ncol = 1)
-
 # Obs.: Chama atenção o número de reprovações na 2a avaliação (G2) e na avaliação final (G3)
 
 
